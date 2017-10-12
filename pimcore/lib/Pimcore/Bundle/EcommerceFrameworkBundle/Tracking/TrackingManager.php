@@ -57,6 +57,21 @@ class TrackingManager implements ITrackingManager
     }
 
     /**
+     * Tracks a category page view
+     *
+     * @param mixed $page            Any kind of page information you can use to track your page
+     * @param array|string $category One or more categories matching the page
+     */
+    public function trackCategoryPageView($page, $category)
+    {
+        foreach ($this->trackers as $tracker) {
+            if ($tracker instanceof ICategoryPageView) {
+                $tracker->trackCategoryPageView($page, $category);
+            }
+        }
+    }
+
+    /**
      * Track product impression
      *
      * @implements IProductImpression
