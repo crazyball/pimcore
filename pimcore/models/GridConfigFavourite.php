@@ -38,14 +38,21 @@ class GridConfigFavourite extends AbstractModel
     public $gridConfigId;
 
     /**
-     * @param int $id
+     * @var string
+     */
+    public $searchType;
+
+    /**
+     * @param $ownerId
+     * @param $classId
+     * @param null $searchType
      *
      * @return GridConfigFavourite
      */
-    public static function getByOwnerAndClassId($ownerId, $classId)
+    public static function getByOwnerAndClassId($ownerId, $classId, $searchType = '')
     {
         $favourite = new self();
-        $favourite->getDao()->getByOwnerAndClassId($ownerId, $classId);
+        $favourite->getDao()->getByOwnerAndClassId($ownerId, $classId, $searchType);
 
         return $favourite;
     }
@@ -112,5 +119,21 @@ class GridConfigFavourite extends AbstractModel
     public function setGridConfigId($gridConfigId)
     {
         $this->gridConfigId = $gridConfigId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSearchType(): string
+    {
+        return $this->searchType;
+    }
+
+    /**
+     * @param string $searchType
+     */
+    public function setSearchType($searchType)
+    {
+        $this->searchType = $searchType;
     }
 }
