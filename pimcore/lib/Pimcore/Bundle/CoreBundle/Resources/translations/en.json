@@ -1577,7 +1577,7 @@
   "lower": "Lower",
   "disabled": "Disabled",
   "capitalization":"Capitalization",
-  "restrict_to_locales": "Restrict to locales (csv list)",
+  "restrict_to_locales": "Restrict to locales",
   "predefined": "Predefined",
   "save_as": "Save as copy",
   "remove_config": "Remove Config",
